@@ -1,6 +1,7 @@
 """
-Shared problem instance definition used by IP.py, EEV.py, WS.py, SP.py, DE.py.
-Import this module to get the canonical units_df, loc_mab, regional_mab, and T.
+Shared problem instance definition used by 2EEV.py, 2SP.py, 2WS.py, 2DE.py,
+3EEV.py, 3SP.py, 3WS.py, 3DE.py, and experiment5.ipynb.
+60-cage fleet across 6 real locations (Loc1-Loc6).
 """
 import numpy as np
 import pandas as pd
@@ -103,7 +104,6 @@ loc_mab = {
 }
 regional_mab = 35_000_000*(6/6)
 
-# Scenario temperature and survival parameters (matching SP.py / DE.py)
 temps_bad_12    = np.array([3, 3, 3, 4,  7, 10, 12, 14.5, 13.5, 11,  8, 5.5])
 temps_normal_12 = np.array([5, 5, 5, 6,  9, 12, 14, 16.5, 15.5, 13, 10, 7.5])
 temps_good_12   = np.array([7, 7, 7, 8, 11, 14, 16, 18.5, 17.5, 15, 12, 9.5])
@@ -121,7 +121,7 @@ def _tile(arr, n):
 
 
 def build_scenarios():
-    """Return list of (name, temps_sc, S_sc, prob) for all 81 scenarios."""
+    """Return list of (name, temps_sc, S_sc, prob) for all 81 four-stage scenarios."""
     scenarios = []
     for t1 in labels:
         for t2 in labels:

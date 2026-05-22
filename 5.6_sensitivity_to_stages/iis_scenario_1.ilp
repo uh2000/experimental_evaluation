@@ -1,0 +1,26 @@
+\ Model Salmon_s1_bad__s2_normal_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Maximize
+ 
+Subject To
+ R3794: - z[Location_1____Unit_3,14] + h[Location_1____Unit_3,14,25]
+   + h[Location_1____Unit_3,14,26] + h[Location_1____Unit_3,14,27]
+   + h[Location_1____Unit_3,14,28] + h[Location_1____Unit_3,14,29]
+   + h[Location_1____Unit_3,14,30] + h[Location_1____Unit_3,14,31]
+   + h[Location_1____Unit_3,14,32] + h[Location_1____Unit_3,14,33]
+   + h[Location_1____Unit_3,14,34] + h[Location_1____Unit_3,14,35]
+   + h[Location_1____Unit_3,14,36] + h[Location_1____Unit_3,14,37]
+   + h[Location_1____Unit_3,14,38] <= 0
+Bounds
+ h[Location_1____Unit_3,14,29] = 1
+ h[Location_1____Unit_3,14,33] = 1
+Binaries
+ z[Location_1____Unit_3,14] h[Location_1____Unit_3,14,25]
+ h[Location_1____Unit_3,14,26] h[Location_1____Unit_3,14,27]
+ h[Location_1____Unit_3,14,28] h[Location_1____Unit_3,14,29]
+ h[Location_1____Unit_3,14,30] h[Location_1____Unit_3,14,31]
+ h[Location_1____Unit_3,14,32] h[Location_1____Unit_3,14,33]
+ h[Location_1____Unit_3,14,34] h[Location_1____Unit_3,14,35]
+ h[Location_1____Unit_3,14,36] h[Location_1____Unit_3,14,37]
+ h[Location_1____Unit_3,14,38]
+End
