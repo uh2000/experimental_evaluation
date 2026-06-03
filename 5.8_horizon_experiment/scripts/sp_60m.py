@@ -1,7 +1,7 @@
 """
 60-month rolling-SP variant for the long-vs-short horizon experiment.
 
-Subclasses `AugmentedLagrangianDecomposition` from rolling_horizon_experiment
+Subclasses `BinaryProgressiveHedging` from rolling_horizon_experiment
 and adds support for a deterministic "tail" block (default: months 30-59)
 that uses normal temperatures and S_normal for all scenarios.
 
@@ -51,11 +51,11 @@ if _HERE not in sys.path:
 # `sp_rh.py` here is a complete copy of rolling_horizon_experiment/sp.py — used
 # because the rolling_horizon_experiment/sp.py file is intermittently truncated
 # in the OneDrive sync layer the bash mount sees.
-from sp_rh import AugmentedLagrangianDecomposition  # noqa: E402
+from sp_rh import BinaryProgressiveHedging  # noqa: E402
 from ip import SalmonFarmingMILP                    # noqa: E402
 
 
-class AugmentedLagrangianDecomposition60M(AugmentedLagrangianDecomposition):
+class BinaryProgressiveHedging60M(BinaryProgressiveHedging):
     """
     Rolling SP with horizon `T` and a deterministic "tail" of normal
     temperatures appended after the last stochastic stage.

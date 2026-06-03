@@ -47,7 +47,7 @@ from IP import SalmonFarmingMILP
 from instance import units_df, loc_mab, regional_mab
 
 
-class AugmentedLagrangianDecomposition:
+class BinaryProgressiveHedging:
     """
     Solves the 9-scenario salmon farming MILP via Augmented Lagrangian
     Decomposition. Call solve() to run the algorithm and plot() to visualise
@@ -1683,7 +1683,7 @@ class AugmentedLagrangianDecomposition:
 if __name__ == "__main__":
     from instance import units_df, loc_mab, regional_mab, T, temps_normal_12, temps_bad_12, temps_good_12
 
-    ald = AugmentedLagrangianDecomposition(
+    ald = BinaryProgressiveHedging(
         units_df=units_df,
         loc_mab=loc_mab,
         regional_mab=regional_mab,

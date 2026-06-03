@@ -5,7 +5,7 @@ compared over a 120-month real-time evaluation period.
 Design
 ------
 All three variants use the same 15-month stage length and share the
-non-anticipativity tree structure from sp_rh.AugmentedLagrangianDecomposition:
+non-anticipativity tree structure from sp_rh.BinaryProgressiveHedging:
 
   Variant  Horizon  Stages  Scenarios  Commit  Solves  Solve starts
   -------  -------  ------  ---------  ------  ------  ------------
@@ -273,7 +273,7 @@ def run_trajectory(
         )
 
         t_solve0 = time.time()
-        ald = sp_rh.AugmentedLagrangianDecomposition(
+        ald = sp_rh.BinaryProgressiveHedging(
             units_df=units_df,
             loc_mab=loc_mab,
             regional_mab=regional_mab,

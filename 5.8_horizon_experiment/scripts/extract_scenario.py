@@ -1,5 +1,5 @@
 """
-Per-scenario decision extraction from a solved AugmentedLagrangianDecomposition.
+Per-scenario decision extraction from a solved BinaryProgressiveHedging.
 
 The forward-sim helper `extract_implemented_decisions` in
 `rolling_horizon_experiment/forward_sim.py` only handles the "@s0" consensus
