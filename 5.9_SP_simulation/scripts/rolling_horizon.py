@@ -94,13 +94,13 @@ def _solve_one_roll(
     ph_kwargs: Optional[dict] = None,
 ):
     """Build & solve a 30-month, 27-scenario SP. Returns the solved
-    `AugmentedLagrangianDecomposition` instance."""
+    `BinaryProgressiveHedging` instance."""
     # Lazy import — pulls in gurobipy.
-    from sp import AugmentedLagrangianDecomposition
+    from sp import BinaryProgressiveHedging
 
     ph_kwargs = dict(ph_kwargs or {})
 
-    ald = AugmentedLagrangianDecomposition(
+    ald = BinaryProgressiveHedging(
         units_df=units_df,
         loc_mab=loc_mab,
         regional_mab=regional_mab,
@@ -252,7 +252,7 @@ def run_rolling_horizon(
         Calendar month corresponding to month 0 of roll 0.
     temp_map, S_normal, S_bad : temperature & survival profiles.
     ph_kwargs : dict
-        Forwarded to `AugmentedLagrangianDecomposition.__init__`.  Use
+        Forwarded to `BinaryProgressiveHedging.__init__`.  Use
         e.g. `{"K": 200, "mip_gap": 0.02}` to bound the work per roll.
     save_dir : str
         If set, every roll's outputs (consensus plan + scenario-plan dump

@@ -46,7 +46,7 @@ from IP import SalmonFarmingMILP
 from instance import units_df, loc_mab, regional_mab
 
 
-class AugmentedLagrangianDecomposition:
+class BinaryProgressiveHedging:
     """
     Solves the 81-scenario salmon farming MILP via Augmented Lagrangian
     Decomposition. Call solve() to run the algorithm and plot() to visualise
@@ -1841,7 +1841,7 @@ class AugmentedLagrangianDecomposition:
         plt.close(fig)
 
 
-def export_solution_bundle(ald: AugmentedLagrangianDecomposition,
+def export_solution_bundle(ald: BinaryProgressiveHedging,
                            outdir: str = "solution_exports"):
     """Export final PH policy and scenario solutions to CSV files."""
     os.makedirs(outdir, exist_ok=True)
@@ -1918,7 +1918,7 @@ def export_solution_bundle(ald: AugmentedLagrangianDecomposition,
 # export_decision_tree — Excel workbook 
 # =============================================================================
 
-def export_decision_tree(ald: "AugmentedLagrangianDecomposition",
+def export_decision_tree(ald: "BinaryProgressiveHedging",
                          filename: str = "stats/st_sp_decision_tree.xlsx"):
     """
     Export the ALD (ST_SP) decision tree to a readable Excel workbook.
@@ -2364,7 +2364,7 @@ def export_decision_tree(ald: "AugmentedLagrangianDecomposition",
 
 if __name__ == "__main__":
     from instance import temps_normal_12, temps_bad_12, temps_good_12
-    ald = AugmentedLagrangianDecomposition(
+    ald = BinaryProgressiveHedging(
         units_df=units_df,
         loc_mab=loc_mab,
         regional_mab=regional_mab,

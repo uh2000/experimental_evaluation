@@ -6,7 +6,7 @@ Each roll covers 30 months: months 0-2 are deterministically implemented
 27 scenarios).  After solving the SP, this module:
 
 1. Extracts the consensus first-3-month decisions from a solved
-   `AugmentedLagrangianDecomposition` (everything tagged "@s0").
+   `BinaryProgressiveHedging` (everything tagged "@s0").
 2. Advances each unit's state through those 3 months using the realised
    temperature sequence (one of the {bad, normal, good} labels), respecting
    harvest decisions.
@@ -83,12 +83,12 @@ def extract_implemented_decisions(
 ) -> Dict:
     """
     Pull the consensus stage-0 decisions (z, h_exist, h, q) from a solved
-    `AugmentedLagrangianDecomposition` and return them as a tidy dict keyed
+    `BinaryProgressiveHedging` and return them as a tidy dict keyed
     by month, unit, etc.
 
     Parameters
     ----------
-    ald : AugmentedLagrangianDecomposition
+    ald : BinaryProgressiveHedging
         A *solved* SP — must have `bin_consensus`, `q_robust_vals`,
         `name_to_idx`, `all_na_names_ordered` populated (call `solve()` first).
     n_implement : int

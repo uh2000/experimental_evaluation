@@ -308,7 +308,7 @@ def _solve_one(
     ph_kwargs: Dict,
     sp_class,
 ):
-    """Build, solve, and return the AugmentedLagrangianDecomposition (or
+    """Build, solve, and return the BinaryProgressiveHedging (or
     its 60M subclass)."""
     ald = sp_class(
         units_df=units_df,
@@ -480,9 +480,9 @@ def run_variant(
     commit_months   = cfg["commit_months"]
     n_solves        = cfg["n_solves"]
     kind            = cfg["kind"]   # "sp" or "det"
-    sp_class        = (sp_60m.AugmentedLagrangianDecomposition60M
+    sp_class        = (sp_60m.BinaryProgressiveHedging60M
                        if variant == "60M"
-                       else sp_rh.AugmentedLagrangianDecomposition)
+                       else sp_rh.BinaryProgressiveHedging)
     ph_kwargs       = dict(ph_kwargs or {})
 
     # Pull the MIP gap separately for the deterministic variant, since
